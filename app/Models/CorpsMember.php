@@ -32,22 +32,19 @@ class CorpsMember extends Model
                 'position' => 0
             ]);
 
-            self::where([['group', $group],['position','>',0]])->update([
-                'position' => \DB::raw("`position` - 1")
-            ]);
-
             self::where([['group', $group], ['level', '>', 1]])
+                ->whereRaw('`position` > pow(2,`level`-2)')
                 ->update([
-                'level' => \DB::raw("`level` - 1")
-            ]);
-
-            self::where([['group', $group], ['level', '>', 1]])
-                ->whereRaw('`position` >= pow(2,`level`-1)+pow(2,`level`)-1')
-                ->update([
-                'position' => \DB::raw("`position` - pow(2,`level`-1)"),
+                'position' => \DB::raw("`position` - pow(2,`level`-2)"),
+                'level' => \DB::raw("`level` - 1"),
                 'group' => $max_group
             ]);
 
+            self::where([['group', $group], ['level', '>', 1]])
+                ->whereRaw('`position` <= pow(2,`level`-2)')
+                ->update([
+                'level' => \DB::raw("`level` - 1")
+            ]);
         }
     }
 }

@@ -20,7 +20,7 @@ class CorpsMemberTableSeeder extends Seeder
                 'member_no'=>$i,
                 'level'=>$level,
                 'group'=>1,
-                'position'=>$i,
+                'position'=>$count,
                 'add_time'=>date('Y-m-d H:i:s'),
             ];
             if($count==pow(2,$level-1)) {
