@@ -1,0 +1,236 @@
+body {
+  font-family: "微软雅黑";
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+.custom-pagination {
+  .pagination {
+    margin: 0;
+  }
+}
+
+.custom{
+  .tab-content{
+    border:1px solid #ddd;
+    border-top:none;
+  }
+  .tab-pane{
+    padding: 30px 10px 10px 10px;
+  }
+}
+
+.table > tbody > tr > td{
+  vertical-align: middle;
+}
+
+.login-box ,.reg-box{
+  padding: 15px;
+  max-width: 374px;
+  margin: 7% auto;
+  background: url(../images/tm30.png);
+  .login-box-body {
+  }
+}
+.login-box{
+  max-width: 300px;
+}
+
+.top {
+  position: relative;
+  background: url(../images/top.jpg) center -105px #212121;
+  .logo {
+    padding: 5px;
+  }
+  .an {
+    text-align: right;
+    padding: 30px 15px;
+  }
+}
+
+.main {
+  position: relative;
+  background: #84c415 url("../images/cc.png") no-repeat scroll left bottom;
+  .left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    z-index: 800;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    .btn, .llong2 {
+      white-space: nowrap;
+    }
+    .choujiang {
+      text-align: center;
+      margin-top: 10px;
+      img {
+        width: 80%;
+        height: auto;
+      }
+    }
+    .btn-group-vertical {
+      width: 100%;
+      margin-top: 10px;
+      .glyphicon {
+        color: #fff;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        li {
+          border-bottom: #fff solid 1px;
+        }
+      }
+      .sub-menu {
+        padding: 5px 0 5px 0;
+        li {
+          border-bottom: 0;
+        }
+      }
+    }
+    .btn-long {
+      width: 100%;
+      border-radius: 0;
+      border: 0;
+      color: #FFF;
+      text-align: left;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      &:hover {
+        background: #B71C02;
+        color: #FFF;
+      }
+      &:focus {
+        background: #B71C02;
+        color: #FFF;
+      }
+    }
+    .lloadmin {
+      color: #F00;
+      font-weight: bold;
+      &:hover {
+        background: #B71C02;
+        color: #D90200;
+        font-weight: bold;
+      }
+      &:focus {
+        background: #B71C02;
+        color: #D90200;
+        font-weight: bold;
+      }
+    }
+    .llong0 {
+      float: left;
+      margin-left: 10px;
+      margin-top: 2px;
+    }
+    .llong1 {
+      float: right;
+      margin-right: 5px;
+      margin-top: 4px;
+      font-size: 12px;
+      display: inline;
+    }
+    .llong2 {
+      float: left;
+      margin-left: 10px;
+    }
+    .sub-menu {
+      display: none;
+    }
+    .btn-long16 {
+      background: #B71C02;
+      color: #FFF;
+      .llong0 {
+        color: #FFF;
+      }
+      .llong1 {
+        color: #FFF;
+      }
+      &:hover {
+        background: #B71C02;
+        color: #FFF;
+      }
+      &:focus {
+        background: #B71C02;
+        color: #FFF;
+      }
+    }
+    .btn-long8 {
+      width: 100%;
+      border-radius: 0;
+      border: 0;
+      color: #fff;
+      text-align: left;
+      padding-top: 7px;
+      padding-left: 46px;
+      padding-bottom: 7px;
+      &:hover {
+        background: #F4CB5F;
+        color: #5C3C01;
+      }
+      &:focus {
+        background: #F4CB5F;
+        color: #5C3C01;
+      }
+    }
+    .btn-long32 {
+      background: #F4CB5F;
+      color: #5C3C01;
+    }
+  }
+  .right {
+    transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+    //position: absolute;
+    //top:0;
+    //left:200px;
+    //bottom:0;
+    //right:0;
+    margin-left: 200px;
+    z-index: 820;
+    background: #FFF;
+  }
+}
+
+@media (max-width: 768px) {
+  .top {
+    background: url(../images/top.jpg) center;
+    .logo {
+      text-align: center;
+    }
+    .an {
+      text-align: center;
+      padding-top: 0px;
+      padding-bottom: 5px;
+    }
+  }
+  .login-box ,.reg-box{
+    width: 90%;
+    margin-top: 20px;
+  }
+  .main {
+    overflow: hidden;
+    &.active{
+      .right{
+        margin-left:200px;
+        margin-right:-200px;
+      }
+      .left{
+        width:200px;
+      }
+    }
+    .right {
+      margin-left: 0;
+    }
+    .left {
+      width: 0;
+    }
+  }
+}
