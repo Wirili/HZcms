@@ -7,6 +7,7 @@ return [
     'tab_recommend'=>'推荐会员配置',
     'tab_level'=>'会员升级配置',
     'tab_withdraw'=>'提现配置',
+    'tab_corps'=>'军团配置',
 
     'web_title' => '网站名称',
     'web_desc' => '网站描述',
@@ -34,6 +35,8 @@ return [
     'withdraw_fee' => '手续费',
     'withdraw_member' => '需求直荐',
     'withdraw_minmoney' => '最低提现',
+    'corps_max_level' => '最大级数',
+    'corps_money' => '参加金额',
     'range'=>[
         'web_close'=>[
             0=>'关闭',

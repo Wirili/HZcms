@@ -29,20 +29,23 @@ class ConfigTableSeeder extends Seeder
             'code'=>'tab_withdraw',
             'type'=>'group'
         ],[
+            'code'=>'tab_corps',
+            'type'=>'group'
+        ],[
             'parent_id'=>1,
             'code'=>'web_title',
             'type'=>'text',
-            'value'=>'复利系统'
+            'value'=>'军团互助'
         ],[
             'parent_id'=>1,
             'code'=>'web_desc',
             'type'=>'text',
-            'value'=>'复利系统'
+            'value'=>'军团互助'
         ],[
             'parent_id'=>1,
             'code'=>'web_keys',
             'type'=>'text',
-            'value'=>'复利系统'
+            'value'=>'军团互助'
         ],[
             'parent_id'=>1,
             'code'=>'web_close',
@@ -139,6 +142,16 @@ class ConfigTableSeeder extends Seeder
             'code'=>'withdraw_minmoney',
             'type'=>'text',
             'value'=>'100'
+        ],[
+            'parent_id'=>6,
+            'code'=>'corps_max_level',
+            'type'=>'text',
+            'value'=>'7'
+        ],[
+            'parent_id'=>6,
+            'code'=>'corps_money',
+            'type'=>'text',
+            'value'=>'200'
         ]];
         foreach ($lists as $list) {
             Config::create($list);

@@ -29,6 +29,6 @@ class CreateArticleCatsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('article_cats');
+        Schema::dropIfExists('article_cats');
     }
 }

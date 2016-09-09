@@ -5,7 +5,7 @@ return [
     'characters' => '2346789abcdefghjmnpqrtuxyzABCDEFGHJMNPQRTUXYZ',
 
     'default'   => [
-        'length'    => 7,
+        'length'    => 4,
         'width'     => 80,
         'height'    => 34,
         'quality'   => 90,
