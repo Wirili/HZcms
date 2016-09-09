@@ -18,7 +18,7 @@ class CreateCorpsMembersTable extends Migration
             $table->unsignedInteger('user_id')->default(0)->comment('用户id');
             $table->string('member_no',50)->default('')->comment('成员编号');
             $table->unsignedTinyInteger('level')->default(0)->comment('等级');
-            $table->unsignedInteger('gruop')->default(0)->comment('军团编号');
+            $table->unsignedInteger('group')->default(0)->comment('军团编号');
             $table->unsignedSmallInteger('position')->default(0)->comment('位置');
             $table->dateTime('add_time')->comment('添加时间');
 
