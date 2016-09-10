@@ -37,5 +37,5 @@ return [
     'point2_transfer'=>'金币转账',
     'point1_transfer'=>'激活币转账',
 
-    'corps'=>'军团详情',
+    'corps_index'=>'军团详情',
 ];
