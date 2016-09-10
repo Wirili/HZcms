@@ -12,21 +12,21 @@ class CorpsMemberTableSeeder extends Seeder
      */
     public function run()
     {
-        $level=1;
-        $count=1;
-        for($i=1;$i<=3;$i++){
-            $lists[]=[
-                'user_id'=>1,
-                'member_no'=>$i,
-                'level'=>$level,
-                'group'=>1,
-                'position'=>$count,
-                'add_time'=>date('Y-m-d H:i:s'),
+        $level = 1;
+        $count = 1;
+        for ($i = 1; $i <= 3; $i++) {
+            $lists[] = [
+                'user_id' => 1,
+                'member_no' => $i,
+                'level' => $level,
+                'group' => 1,
+                'position' => $count,
+                'add_time' => date('Y-m-d H:i:s'),
             ];
-            if($count==pow(2,$level-1)) {
+            if ($count == pow(2, $level - 1)) {
                 $level++;
                 $count = 1;
-            }else
+            } else
                 $count++;
         }
         foreach ($lists as $list) {
