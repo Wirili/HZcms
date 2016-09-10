@@ -17,6 +17,9 @@
         </div>
         <div class="panel-body">
             <div class="row">
+                <div class="col-md-12 text-right"><button class="btn btn-info join-corps">加入军团</button></div>
+            </div>
+            <div class="row">
                 <div class="col-md-12">
             @if($corps)
                     <ul class="nav nav-tabs" role="tablist">
@@ -59,6 +62,38 @@
 
 @section('footer')
     <script>
-        mgo('11');
+        mgo('61');
+        $(function() {
+            $('.join-corps').on('click', function (e) {
+                var load = layer.load();
+                $.ajax({
+                    type: 'POST',
+                    url: '{{URL::route('corps_add')}}',
+                    success: function (result) {
+                        debugger;
+                        layer.close(load);
+                        if (result.status == 'error') {
+                            $.each(result.msg, function (id, arr) {
+                                var str = "";
+                                $.each(arr, function (a, b) {
+                                    str += b + "<br>";
+                                    return false;
+                                });
+                                layer.msg(str, {
+                                    time: 2000,
+                                });
+                                return false;
+                            });
+                        } else if (result.status == 'success') {
+                            layer.alert(result.msg, {
+                                closeBtn: 0
+                            }, function () {
+                                window.location.reload(true);
+                            });
+                        }
+                    }
+                });
+            });
+        });
     </script>
 @endsection

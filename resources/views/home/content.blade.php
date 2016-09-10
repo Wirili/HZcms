@@ -81,8 +81,8 @@
                     <li>
                         <a class="btn btn-long" href="#" role="button"><span class="glyphicon glyphicon-shopping-cart llong0" aria-hidden="true"></span><span class="llong2">军团管理</span><span class="glyphicon glyphicon-menu-left llong1"></span></a>
                         <ul class="sub-menu">
-                            <li><a class="btn btn-long8" href="{{URL::route('corps_index')}}" id="m51">军团详情</a></li>
-                            <li><a class="btn btn-long8" href="/member/point2_shop_order.php" id="m52">我的订单</a></li>
+                            <li><a class="btn btn-long8" href="{{URL::route('corps_index')}}" id="m61">军团详情</a></li>
+                            <li><a class="btn btn-long8" href="/member/point2_shop_order.php" id="m62">我的订单</a></li>
                         </ul>
                     </li>
                 </ul>

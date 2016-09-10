@@ -20,7 +20,7 @@ class CreateCorpsMembersTable extends Migration
             $table->tinyInteger('level')->default(0)->comment('等级');
             $table->unsignedInteger('group')->default(0)->comment('军团编号');
             $table->unsignedSmallInteger('position')->default(0)->comment('位置');
-            $table->dateTime('add_time')->comment('添加时间');
+            $table->dateTime('add_time')->nullable()->comment('添加时间');
 
 //            $table->timestamps();
         });

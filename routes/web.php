@@ -59,6 +59,7 @@ Route::post('point2_sell','Home\Point2Controller@sell')->name('point2_sell');
 
 
 Route::get('corps_index','Home\CorpsController@index')->name('corps_index');
+Route::post('corps_add','Home\CorpsController@add')->name('corps_add');
 
 
 Route::group(['prefix' => 'admin','as'=>'admin.'], function () {

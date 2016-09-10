@@ -14,7 +14,7 @@ class CorpsMemberTableSeeder extends Seeder
     {
         $level=1;
         $count=1;
-        for($i=1;$i<=7;$i++){
+        for($i=1;$i<=3;$i++){
             $lists[]=[
                 'user_id'=>1,
                 'member_no'=>$i,

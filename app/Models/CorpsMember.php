@@ -35,32 +35,49 @@ class CorpsMember extends Model
             self::where([['group', $group], ['level', '>', 1]])
                 ->whereRaw('`position` > pow(2,`level`-2)')
                 ->update([
-                'position' => \DB::raw("`position` - pow(2,`level`-2)"),
-                'level' => \DB::raw("`level` - 1"),
-                'group' => $max_group
-            ]);
+                    'position' => \DB::raw("`position` - pow(2,`level`-2)"),
+                    'level' => \DB::raw("`level` - 1"),
+                    'group' => $max_group
+                ]);
 
             self::where([['group', $group], ['level', '>', 1]])
                 ->whereRaw('`position` <= pow(2,`level`-2)')
                 ->update([
-                'level' => \DB::raw("`level` - 1")
-            ]);
+                    'level' => \DB::raw("`level` - 1")
+                ]);
         }
     }
 
     //获取分币位置
-    public static function award($cur_pos=1,$max_level=7)
+    public static function award($cur_pos = 1, $max_level = 7)
     {
-        $p=$cur_pos*2;
-        for($i=1;true;$i++){
-            if($p>pow(2,$max_level-$i-1))
-                $p=pow(2,$max_level-$i-1);
-            else
-                break;
+        $position = [];
+        if ($cur_pos < pow(2, $max_level - 2)) {
+            $p = $cur_pos * 2;
+            for ($i = 1; $i < $max_level - 1; $i++) {
+                if ($p > pow(2, $max_level - $i - 1))
+                    $p = pow(2, $max_level - $i - 1);
+                else
+                    break;
+            }
+            return [
+                'level' => $max_level - $i,
+                'position' => [$p, $p - 1],
+                'x' => 0.5
+            ];
+        } else {
+            return [
+                'level' => 1,
+                'position' => [1],
+                'x' => 1
+            ];
         }
-        return [
-            'level'=>$max_level-$i,
-            'position'=>$p
-        ];
+
+    }
+
+    //获取当前级别人数
+    public static function position_count($group = 0, $level = 1)
+    {
+        return self::where([['group', $group], ['level', $level], ['position', '<>', 0]])->count();
     }
 }

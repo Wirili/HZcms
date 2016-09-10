@@ -24,6 +24,7 @@ class UserTableSeeder extends Seeder
         ], [
             'name' => '102',
             'parent_id' => 1,
+            'is_pass' => 1,
             'password' => \Hash::make('111111'),
             'password2' => \Hash::make('111111'),
             'point1' => 1000,
