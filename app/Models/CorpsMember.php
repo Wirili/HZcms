@@ -54,6 +54,7 @@ class CorpsMember extends Model
         $position = [];
         if ($cur_pos < pow(2, $max_level - 2)) {
             $p = $cur_pos * 2;
+
             for ($i = 1; $i < $max_level - 1; $i++) {
                 if ($p > pow(2, $max_level - $i - 1))
                     $p = pow(2, $max_level - $i - 1);
