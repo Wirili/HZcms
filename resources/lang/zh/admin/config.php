@@ -37,6 +37,7 @@ return [
     'withdraw_minmoney' => '最低提现',
     'corps_max_level' => '最大级数',
     'corps_money' => '参加金额',
+    'corps_level_name' => '级别名称',
     'range'=>[
         'web_close'=>[
             0=>'关闭',

@@ -152,6 +152,11 @@ class ConfigTableSeeder extends Seeder
             'code'=>'corps_money',
             'type'=>'text',
             'value'=>'200'
+        ],[
+            'parent_id'=>6,
+            'code'=>'corps_level_name',
+            'type'=>'text',
+            'value'=>'军长,师长,旅长,团长,营长,连长,排长'
         ]];
         foreach ($lists as $list) {
             Config::create($list);

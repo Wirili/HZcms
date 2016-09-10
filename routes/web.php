@@ -58,6 +58,9 @@ Route::post('point2_sell_quit','Home\Point2Controller@sell_quit')->name('point2_
 Route::post('point2_sell','Home\Point2Controller@sell')->name('point2_sell');
 
 
+Route::get('corps_index','Home\CorpsController@index')->name('corps_index');
+
+
 Route::group(['prefix' => 'admin','as'=>'admin.'], function () {
     Route::get('welcome', ['uses'=>'Admin\IndexController@welcome','as'=>'welcome']);
     Route::get('/', ['uses'=>'Admin\IndexController@index','as'=>'/']);

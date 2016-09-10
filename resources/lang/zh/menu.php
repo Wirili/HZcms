@@ -36,4 +36,6 @@ return [
     'point2_sell_log'=>'金币卖出列表',
     'point2_transfer'=>'金币转账',
     'point1_transfer'=>'激活币转账',
+
+    'corps'=>'军团详情',
 ];

@@ -47,4 +47,20 @@ class CorpsMember extends Model
             ]);
         }
     }
+
+    //获取分币位置
+    public static function award($cur_pos=1,$max_level=7)
+    {
+        $p=$cur_pos*2;
+        for($i=1;true;$i++){
+            if($p>pow(2,$max_level-$i-1))
+                $p=pow(2,$max_level-$i-1);
+            else
+                break;
+        }
+        return [
+            'level'=>$max_level-$i,
+            'position'=>$p
+        ];
+    }
 }
