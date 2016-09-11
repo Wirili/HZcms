@@ -79,6 +79,6 @@ class CorpsMember extends Model
     //获取当前级别人数
     public static function position_count($group = 0, $level = 1)
     {
-        return self::where([['group', $group], ['level', $level], ['position', '<>', 0]])->count();
+        return self::where([['group', $group], ['level', $level], ['position', '<>', 0]])->count()??0;
     }
 }

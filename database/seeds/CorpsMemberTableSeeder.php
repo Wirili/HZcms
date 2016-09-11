@@ -30,7 +30,7 @@ class CorpsMemberTableSeeder extends Seeder
                 $count++;
         }
         foreach ($lists as $list) {
-            CorpsMember::create($list);
+//            CorpsMember::create($list);
         }
     }
 }
