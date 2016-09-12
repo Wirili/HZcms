@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
             $table->increments('user_id');
             $table->string('name')->comment('用户名');
             $table->string('fullname',100)->default('')->comment('姓名');
+            $table->string('img',255)->default('')->comment('头像');
             $table->string('email')->default('')->comment('邮箱');
             $table->string('mobile')->default('')->comment('手机');
             $table->string('password')->default('')->comment('密码');

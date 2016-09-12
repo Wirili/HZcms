@@ -14,7 +14,7 @@ class CorpsMemberTableSeeder extends Seeder
     {
         $level = 1;
         $count = 1;
-        for ($i = 1; $i <= 3; $i++) {
+        for ($i = 1; $i <= 126; $i++) {
             $lists[] = [
                 'user_id' => 1,
                 'member_no' => $i,
@@ -30,7 +30,7 @@ class CorpsMemberTableSeeder extends Seeder
                 $count++;
         }
         foreach ($lists as $list) {
-//            CorpsMember::create($list);
+            CorpsMember::create($list);
         }
     }
 }

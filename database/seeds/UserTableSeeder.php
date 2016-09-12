@@ -21,6 +21,7 @@ class UserTableSeeder extends Seeder
             'is_pass' => 1,
             'point1' => 1000,
             'point2' => 1000,
+            'img' => '/images/088f3afd6cb569624731b4f8c17eb7ff.jpg',
         ], [
             'name' => '102',
             'parent_id' => 1,

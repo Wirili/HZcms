@@ -34,17 +34,25 @@
                         <div role="tabpanel" class="tab-pane @if($loop->first) active @endif" id="group-{{$item->group}}">
                             <table class="table table-hover table-striped" style="margin-bottom:0;">
                                 <tr>
-                                    <th>级别</th>
-                                    <th>位置</th>
-                                    <th>用户名</th>
+                                    <th width="50">级别</th>
+                                    <th>用户</th>
                                 </tr>
-                            @foreach($corps->where('group',$item->group) as $v)
-                                <tr @if($v->user_id==\Auth::user()->user_id) class="text-danger" @endif>
-                                    <td>{{explode(',',$C['corps_level_name'])[$v->level-1]}}</td>
-                                    <td>{{$v->position}}</td>
-                                    <td>{{$v->user->name}}</td>
+                                <tr>
+                                    <td>
+                                        <?php $level=0; ?>
+                                    @foreach($corps->where('group',$item->group) as $v)
+                                        @if($level!=$v->level)
+                                            @if(!$loop->first) </td></tr><tr><td> @endif
+                                            {{explode(',',$C['corps_level_name'])[$v->level-1]}}</td><td>
+                                        @endif
+                                        <div class="pull-left text-center" style="width:50px;margin:5px;">
+                                        <img src="{{$v->user->img}}" alt="" height="50" width="50">
+                                        {{$v->user->name}}
+                                        </div>
+                                        <?php $level=$v->level; ?>
+                                    @endforeach
+                                    </td>
                                 </tr>
-                            @endforeach
                             </table>
                         </div>
                         @endforeach

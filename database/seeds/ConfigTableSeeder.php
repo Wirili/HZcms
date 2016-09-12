@@ -146,7 +146,7 @@ class ConfigTableSeeder extends Seeder
             'parent_id'=>6,
             'code'=>'corps_max_level',
             'type'=>'text',
-            'value'=>'3'
+            'value'=>'7'
         ],[
             'parent_id'=>6,
             'code'=>'corps_money',
