@@ -26,6 +26,10 @@
     <link href="{{asset('build/common/plugin/layer/skin/layer.css')}}" rel="stylesheet" type='text/css'>
     <script src="{{asset('build/common/plugin/layer/layer.js')}}"></script>
     <!-- end layer -->
+    <!-- swiper -->
+    <link href="{{asset('build/common/plugin/swiper/swiper.css')}}" rel="stylesheet" type='text/css'>
+    <script src="{{asset('build/common/plugin/swiper/swiper.js')}}"></script>
+    <!-- end swiper -->
 
     <!-- bootstrap treeview -->
     <link href="{{asset('build/common/plugin/bootstrap-treeview/bootstrap-treeview.min.css')}}" rel="stylesheet" type='text/css'>

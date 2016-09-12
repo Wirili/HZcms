@@ -43,9 +43,9 @@
                                     @foreach($corps->where('group',$item->group) as $v)
                                         @if($level!=$v->level)
                                             @if(!$loop->first) </td></tr><tr><td> @endif
-                                            {{explode(',',$C['corps_level_name'])[$v->level-1]}}</td><td>
+                                            {{explode(',',$C['corps_level_name'])[$v->level-1]}}</td><td class="text-center" >
                                         @endif
-                                        <div class="pull-left text-center" style="width:50px;margin:5px;">
+                                        <div class="text-center" style="width:50px;margin:5px;display:inline-block;">
                                         <img src="{{$v->user->img}}" alt="" height="50" width="50">
                                         {{$v->user->name}}
                                         </div>
