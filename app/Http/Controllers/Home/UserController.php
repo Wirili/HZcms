@@ -115,7 +115,7 @@ class UserController extends Controller
      */
     public function point2_log_in()
     {
-        $log = LogPoint2::where('user_id', \Auth::user()->user_id)->where('price', '>', '0')->paginate(12);
+        $log = LogPoint2::where('user_id', \Auth::user()->user_id)->where('price', '>', '0')->orderBy('id','desc')->paginate(12);
         return view('home.point2_log_in', [
             'page_title' => trans('menu.point2_log_in'),
             'log' => $log
@@ -129,7 +129,7 @@ class UserController extends Controller
      */
     public function point2_log_out()
     {
-        $log = LogPoint2::where('user_id', \Auth::user()->user_id)->where('price', '<', '0')->paginate(12);
+        $log = LogPoint2::where('user_id', \Auth::user()->user_id)->where('price', '<', '0')->orderBy('id','desc')->paginate(12);
         return view('home.point2_log_out', [
             'page_title' => trans('menu.point2_log_out'),
             'log' => $log
