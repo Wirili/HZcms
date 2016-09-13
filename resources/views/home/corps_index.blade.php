@@ -32,7 +32,8 @@
                     <div class="tab-content" style="border:1px solid #ddd; border-top:none;padding:15px 0 0 0;">
                         @foreach($groups as $item)
                         <div role="tabpanel" class="tab-pane @if($loop->first) active @endif" id="group-{{$item->group}}">
-                            <table class="table table-hover table-striped" style="margin-bottom:0;">
+                            <div class="corps-scoll" style="width:100%;overflow-y: auto;">
+                            <table class="table table-hover table-striped" style="margin-bottom:0;width:4200px;">
                                 <tr>
                                     <th width="50">级别</th>
                                     <th>用户</th>
@@ -54,6 +55,7 @@
                                     </td>
                                 </tr>
                             </table>
+                            </div>
                         </div>
                         @endforeach
                     </div>
@@ -72,6 +74,8 @@
     <script>
         mgo('61');
         $(function() {
+
+            $('.corps-scoll').scrollLeft(2125-$('.corps-scoll').width()/2);
             $('.join-corps').on('click', function (e) {
                 var load = layer.load();
                 $.ajax({
