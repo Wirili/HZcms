@@ -46,7 +46,7 @@
                                             @if(!$loop->first) </td></tr><tr><td> @endif
                                             {{explode(',',$C['corps_level_name'])[$v->level-1]}}</td><td class="text-center" >
                                         @endif
-                                        <div class="text-center" style="width:50px;margin:5px;display:inline-block;">
+                                        <div class="text-center" style="width:50px;margin:5px;display:inline-block;@if($v->user_id==\Auth::user()->user_id)color:red;@endif">
                                         <img src="{{$v->user->img}}" alt="" height="50" width="50">
                                         {{$v->user->name}}
                                         </div>
